@@ -1,5 +1,5 @@
 # apprentice-projects-spring22
-Central repository for App Team Carolina's Academy Apprenticeship projects for Spring 2022.
+Central repository for App Team Carolina's Academy Apprenticeship projects in Spring 2022.
 
 ## Setting up your projects repository
   1. Open the [repository](https://github.com/appteamcarolina/apprentice-projects-s22) on the GitHub website.
