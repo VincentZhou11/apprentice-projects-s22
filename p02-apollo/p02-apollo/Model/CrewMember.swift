@@ -23,4 +23,9 @@ extension CrewMember {
                    name: "Neil A. Armstrong",
                    role: "Commander")
     }
+    static var example2: CrewMember {
+        CrewMember(id: "collins",
+                   name: "Michael Collins",
+                   role: "Command Module Pilot")
+    }
 }
