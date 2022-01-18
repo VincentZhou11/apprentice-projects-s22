@@ -12,12 +12,28 @@ struct MissionDetailView: View {
     let mission: Mission
     
     var body: some View {
-        Text("Hello, World!")
+        ScrollView {
+            VStack{
+                Image(mission.imageName).resizable()
+                    .scaledToFit().frame(width:200, height:200)
+                Text(mission.launchDate?.formatted(Date.FormatStyle().month().day().year()) ?? "N/A").bold().padding(.bottom).foregroundColor(.secondary)
+                Text(mission.description)
+                VStack(alignment:.leading) {
+                    ForEach(mission.crew, id: \.id) { crew in
+                        HStack{
+                            Image(crew.imageName).resizable().scaledToFit().frame(width: 100)
+                            Text(crew.name)
+                        }
+                    }
+                }.frame(maxWidth: .infinity, alignment:.topLeading)
+        
+            }.padding().navigationTitle(Text(mission.displayName))
+        }
     }
 }
 
 struct MissionDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MissionDetailView(mission: .example)
+        MissionDetailView(mission: .example).preferredColorScheme(.dark)
     }
 }
