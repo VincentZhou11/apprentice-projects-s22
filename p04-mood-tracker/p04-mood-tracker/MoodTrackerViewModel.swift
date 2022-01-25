@@ -12,6 +12,6 @@ class MoodTrackerViewModel: ObservableObject {
     @Published var checkInList: [MoodCheckIn] = []
     
     func addCheckIn() {
-        checkInList.insert(MoodCheckIn(mood: checkInText, timestamp: Date.now), at: 0)
+        checkInList.insert(MoodCheckIn(mood: checkInText, timestamp: Date()), at: 0)
     }
 }
