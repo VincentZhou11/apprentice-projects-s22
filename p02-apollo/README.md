@@ -1,39 +1,16 @@
-## Description
-Build a simple application to display information about the Apollo missions.
+# Apollo
 
-<img src="./apollo.gif" alt="NASA Apollo Missions" height="500">
-🚀 This project is a modified version of Paul Hudson’s *Moonshot* from 100 Days of SwiftUI
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6d19d003-4f79-4560-8dbb-0af08fb5e1ae/spring22-logo-transparent.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220126%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220126T042721Z&X-Amz-Expires=86400&X-Amz-Signature=00d3fbe7e56c316b5972300083db89fd520cfe0b629c874d4e023e5634bbd077&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22spring22-logo-transparent.png%22&x-id=GetObject" width="30px" align="left" alt="App Team Carolina Logo">
 
-## My Version and User Story
-1. User opens app to see list of Apollo Missions
-2. Each mission has an image, title, and launch date
-3. Tap on a mission to see more information
-4. A new view slides onto the screen
-5. New screen has title, image, launch date, long description, and list of crew members
+This project is a portion of <a href="https://appteamcarolina.com">App Team Carolina's</a> Apprenticeship curriculum.
 
-## What Does Success Look Like?
-- Entry point is list of Apollo missions. Use `List` and `ForEach` to achieve this
-- For each mission, display the following:
-    - `Image` with the supplied image in the `assets.xcassets` file
-    - a `Text` with the title
-    - a `Text` with the launch date
-- Use a `NavigationLink` for each mission to navigation to a `MissionDetailView`
-- Create a your own `MissionDetailView` struct that takes in a mission and shows detailed information
-- `MissionView` should contain the following
-    - Navigation Bar Title with mission display name
-    - Large `Image` with the correct image from `assets.xcassets`
-    - `Text` with launch date
-    - `Text` with long description
-    - `ForEach` over the crew members array inside of the `Mission` struct. Each subview shows
-        - Crew Member’s `Image`
-        - Crew Member’s name in a `Text`
+## My Implementation
+```
+add screenshots/gifs here
+```
+```
+add description of project here
+```
 
-## Goal
-- (Re)learn how to create lists of data using `List` and `ForEach`
-- (Re)learn how to navigate between screens using `NavigationView` and `NavigationLink`
-
-## Installation and Setup Instructions
-1. Clone the starter code repository: [https://github.com/appteamcarolina/p02-apollo](https://github.com/appteamcarolina/p02-apollo.git).
-2. Open the `p02-apollo.xccodeproj` file.
-3. Browse the files in the `Model` folder and get familiar with `Mission.swift` and `CrewMember.swift`
-4. You’re ready to get to work!
+## Project Instructions
+View project instructions [here](./instructions.md).

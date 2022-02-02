@@ -1,44 +1,16 @@
-## Description
-🎭  We’re going to make a simple mood tracker to help us learn MVVM.
+# Mood Tracker
 
-<img src="./Screenshots/mood tracker.gif" alt="basic mood tracker" height="500px">
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6d19d003-4f79-4560-8dbb-0af08fb5e1ae/spring22-logo-transparent.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220126%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220126T042721Z&X-Amz-Expires=86400&X-Amz-Signature=00d3fbe7e56c316b5972300083db89fd520cfe0b629c874d4e023e5634bbd077&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22spring22-logo-transparent.png%22&x-id=GetObject" width="30px" align="left" alt="App Team Carolina Logo">
 
-## My Version and User Story
+This project is a portion of <a href="https://appteamcarolina.com">App Team Carolina's</a> Apprenticeship curriculum.
 
-1. User opens app to see place to add check-in and list of previous check-ins (if there are any)
-2. User types their mood into the textfield and presses save
-3. That check-in is added to beginning of the list of previous check-ins
+## My Implementation
+```
+add screenshots/gifs here
+```
+```
+add description of project here
+```
 
-## What Does Success Look Like?
-
-- Your view code does very minimal work and is very simple
-- Model: You have created a mood check-in `struct` that:
-    - Conforms to the `Identifiable` protocol
-    - Contains a `mood` property of type `String`
-    - Contains a `timestamp` property of type `Date`
-    - Contains a `formattedTimestamp` property of type String
-- View Model: You have created a `MoodTrackerViewModel` that:
-    - Conforms to the `ObservableObject` protocol
-    - Contains an `@Published` array of mood check-ins
-    - Contains an `@Published` string that holds the new title of a check-in (bound to textfield)
-    - Contains a method to create and save a new check-in where the timestamp is the current time (`Date()`)
-- View: Your `ContentView` has:
-    - An `@StateObject private` property that holds your View Model
-    - A `TextField` to type in the mood for a new check-in
-    - A `Button` that calls the creation method in your View Model
-    - A ForEach over your View Model’s check-ins array
-        - Bonus points if you can make it in reverse chronological order
-        - Hint: its order is *reversed* from the default order if you just append new items
-
-## Goal
-- This project will help us learn the basic idea of MVVM where we separate our business logic from our View code
-
-## Installation Instructions
-
-1. Make sure you’ve forked and cloned the https://github.com/appteamcarolina/apprentice-projects-s22.git repository
-2. Visit your forked version of the repo on the GitHub website.
-
-    `https://github.com/<# your GitHub username #>/apprentice-projects-s22`
-
-3. Fetch and Merge the latest changes.
-4. Pull those changes into your local version of the repository.
+## Project Instructions
+View project instructions [here](./instructions.md).

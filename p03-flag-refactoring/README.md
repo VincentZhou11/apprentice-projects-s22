@@ -1,27 +1,16 @@
-## Description
+# Guess the Flag - MVVM
 
-In this at-home project, we’ll be refactoring Guess the Flag, one of our old projects from 100 Days, to use an ObservableObject and use a more MVVM-like project structure.
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6d19d003-4f79-4560-8dbb-0af08fb5e1ae/spring22-logo-transparent.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220126%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220126T042721Z&X-Amz-Expires=86400&X-Amz-Signature=00d3fbe7e56c316b5972300083db89fd520cfe0b629c874d4e023e5634bbd077&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22spring22-logo-transparent.png%22&x-id=GetObject" width="30px" align="left" alt="App Team Carolina Logo">
 
-I’ve provided a cleaned-up version of my implementation (originally from June 2020 🤯) that you can use as starter code. You can also replace my project with your old implementation if you’d like.
+This project is a portion of <a href="https://appteamcarolina.com">App Team Carolina's</a> Apprenticeship curriculum.
 
-## What Does Success Look Like?
+## My Implementation
+```
+add screenshots/gifs here
+```
+```
+add description of project here
+```
 
-- Because we’re just cleaning up code, a user shouldn’t notice that the code changed
-- You should refactor all of your View code to be pretty simple
-    - Present the data provided by the View Model
-    - Handle button pressed and call methods in the View Model accordingly
-
-## Goal
-
-- Start to get comfortable with MVVM and ObservableObject
-- Get aquatinted with the concept of refactoring code
-
-## Installation Instructions
-
-1. Make sure you’ve forked and cloned the https://github.com/appteamcarolina/apprentice-projects-s22.git repository
-2. Visit your forked version of the repo on the GitHub website.
-
-    `https://github.com/<# your GitHub username #>/apprentice-projects-s22`
-
-3. Fetch and Merge the latest changes.
-4. Pull those changes into your local version of the repository.
+## Project Instructions
+View project instructions [here](./instructions.md).
