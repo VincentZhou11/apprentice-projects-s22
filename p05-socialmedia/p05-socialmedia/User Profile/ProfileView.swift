@@ -27,10 +27,18 @@ struct ProfileView: View {
                 
                 Section() {
                     NavigationLink {
+                        LoginView()
+                    } label: {
+                        HStack {
+                            Image(systemName: "lock.fill").frame(width:20)
+                            Text("Log In")
+                        }
+                    }
+                    NavigationLink {
                         ProfileSettings()
                     } label: {
                         HStack {
-                            Image(systemName: "gear")
+                            Image(systemName: "gear").frame(width:20)
                             Text("Settings")
                         }
                     }

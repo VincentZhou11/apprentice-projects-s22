@@ -17,30 +17,28 @@ struct SignUpView: View {
     @State var acceptEula = false
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section("Info") {
-                    TextField("Email", text:$email)
-                    TextField("Name", text:$name)
-                    
-                }
-                Section("Username") {
-                    TextField("Username", text:$username)
-                }
-                Section("Password") {
-                    TextField("Password", text:$password)
-                    TextField("Confirm Password", text:$confirmPassword)
-                }
+        Form {
+            Section("Info") {
+                TextField("Email", text:$email)
+                TextField("Name", text:$name)
                 
-                Toggle(isOn:$acceptEula) {
-                    Text("Agree to Terms of Service")
-                }
+            }
+            Section("Username") {
+                TextField("Username", text:$username)
+            }
+            Section("Password") {
+                TextField("Password", text:$password)
+                TextField("Confirm Password", text:$confirmPassword)
+            }
+            
+            Toggle(isOn:$acceptEula) {
+                Text("Agree to Terms of Service")
+            }
+            
+            Button {
                 
-                Button {
-                    
-                } label: {
-                    Text("Sign Up")
-                }
+            } label: {
+                Text("Sign Up")
             }
         }.navigationTitle("Sign Up")
     }

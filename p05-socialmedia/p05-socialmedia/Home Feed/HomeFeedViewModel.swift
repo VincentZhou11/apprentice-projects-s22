@@ -7,11 +7,16 @@
 
 import Foundation
 
-class HomeFeedViewModel: ObservableObject {
+class HomeFeedViewModel: ObservableObject, Subscriber {
+    func update() {
+        fetchPosts()
+    }
+    
     @Published var posts: [Post] = []
     
     init() {
         fetchPosts()
+        PostServices.addSubscriber(subscriber: self)
     }
     func fetchPosts() {
         posts = PostServices.getHomeFeed()

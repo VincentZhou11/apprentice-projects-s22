@@ -13,21 +13,28 @@ struct LoginView: View {
     @State var remember = false
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    TextField("Username", text:$username)
-                    TextField("Password", text:$password)
-                    Toggle(isOn:$remember) {
-                        Text("Save Login")
-                    }
-                }
-                Button {
-                    
-                } label: {
-                    Text("Login")
+        Form {
+            Section {
+                TextField("Username", text:$username)
+                TextField("Password", text:$password)
+                Toggle(isOn:$remember) {
+                    Text("Save Login")
                 }
             }
+            Button {
+                
+            } label: {
+                Text("Login")
+            }
+            
+            Section("New User?") {
+                NavigationLink {
+                    SignUpView()
+                } label: {
+                    Text("Sign Up")
+                }
+            }
+            
         }.navigationTitle("Login")
     }
 }

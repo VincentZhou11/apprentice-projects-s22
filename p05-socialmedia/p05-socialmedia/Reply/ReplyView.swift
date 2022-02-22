@@ -11,22 +11,27 @@ struct ReplyView: View {
     let replyUsername: String
     @State var reply = ""
     
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack(alignment:.leading, spacing:0) {
-            (Text("Replying to ") + Text("@\(replyUsername)").foregroundColor(.blue)).padding(.leading, 20)
+//                (Text("Replying to ") + Text("@\(replyUsername)").foregroundColor(.blue)).padding(.leading, 20)
+            Text("@\(replyUsername)").foregroundColor(.blue).font(.title2).padding(.leading, 20)
             Form {
-                TextEditor(text: $reply)
-                Button {
-                    
-                } label: {
-                    Text("Post")
+                Section("Characters: \(reply.count)") {
+                    TextEditor(text: $reply)
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Post")
+                    }
                 }
             }
             
-        }.padding([.leading, .trailing]).navigationTitle("Reply").navigationBarTitleDisplayMode(.inline).toolbar {
+        }.navigationTitle("Replying to").toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-
+                        dismiss()
                     } label: {
                         Image(systemName: "square.and.pencil")
                     }
