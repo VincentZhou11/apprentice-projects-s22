@@ -19,6 +19,8 @@ struct Post: Identifiable {
     var likeCount: Int
     var commentCount: Int
     
+    var replies: [Post] = []
+    
     // once again, this should probably live in a post view model, but we'll add that later
     var formattedDate: String {
         let formatter = DateFormatter()

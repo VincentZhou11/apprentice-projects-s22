@@ -39,7 +39,7 @@ struct PostView: View {
                 }.buttonStyle(PlainButtonStyle())
                 
                 NavigationLink() {
-                    ReplyView(replyUsername: post.authorUsername)
+                    ReplyChainView(post:post)
                 } label: {
                     HStack {
                         Image(systemName: "bubble.left").foregroundColor(.secondary)

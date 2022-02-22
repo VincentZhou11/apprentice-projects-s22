@@ -127,5 +127,6 @@ extension Post {
                               datePosted: Date(timeIntervalSince1970: 1643793600),
                               postContent: "After much deliberation, bluebird is excited to announce a brand new feature on our roadmap that will change social media forever.\n\nImages.\n\nImages will make possible the richest, most unique social media experience that our users have ever experienced.",
                               likeCount: 4206,
-                              commentCount: 950)
+                              commentCount: 950,
+                              replies: PostList.defaultPosts)
 }

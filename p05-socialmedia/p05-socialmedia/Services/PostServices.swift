@@ -21,7 +21,17 @@ struct PostServices {
     }
     static func makePost(post: Post) {
         posts.insert(post, at:0)
-        
+        updateSubscribers()
+    }
+    static func makeReply(post: Post, replyPost: Post) {
+        var newPost = post
+        newPost.replies.append(replyPost)
+        if let oldPost = posts.enumerated().first(where: {$0.element.id == newPost.id}) {
+            posts[oldPost.offset] = newPost
+        }
+        updateSubscribers()
+    }
+    static func updateSubscribers() {
         for subscriber in subscribed  {
             subscriber.update()
         }
