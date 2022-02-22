@@ -12,10 +12,26 @@ struct ReplyView: View {
     @State var reply = ""
     
     var body: some View {
-        VStack(alignment:.leading) {
-            Text("replying to ") + Text("@\(replyUsername)").foregroundColor(.blue)
-            TextField("Reply", text: $reply)
-        }
+        VStack(alignment:.leading, spacing:0) {
+            (Text("Replying to ") + Text("@\(replyUsername)").foregroundColor(.blue)).padding(.leading, 20)
+            Form {
+                TextEditor(text: $reply)
+                Button {
+                    
+                } label: {
+                    Text("Post")
+                }
+            }
+            
+        }.padding([.leading, .trailing]).navigationTitle("Reply").navigationBarTitleDisplayMode(.inline).toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                    }
+                }
+            }
     }
 }
 

@@ -8,12 +8,29 @@
 import SwiftUI
 
 struct NewPostView: View {
-    @State var text = ""
+    
+    @StateObject var vm = NewPostViewModel()
+    
+//    @State var text = ""
     
     var body: some View {
-        VStack(alignment:.leading) {
-            Text("New Post")
-            TextField("Reply", text: $text)
+        NavigationView {
+            Form {
+                TextEditor(text: $vm.currentPostText)
+                Button {
+                    vm.makePost()
+                } label: {
+                    Text("Post")
+                }
+            }.navigationTitle("New Post").toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        vm.makePost()
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                    }
+                }
+            }
         }
     }
 }

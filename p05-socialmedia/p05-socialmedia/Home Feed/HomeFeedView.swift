@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct HomeFeedView: View {
-    let posts: [Post] = PostList.defaultPosts
+    
+    @StateObject var vm = HomeFeedViewModel()
+//    let posts: [Post] = PostList.defaultPosts
     
     var body: some View {
         NavigationView {
             ScrollView {
-                ForEach(posts, id: \.id) { post in
+                ForEach(vm.posts, id: \.id) { post in
                     PostView(post: post)
                 }
-            }.navigationBarHidden(true).overlay(alignment:.bottomTrailing) {
+            }.padding([.leading, .trailing]).navigationBarHidden(true).overlay(alignment:.bottomTrailing) {
                 NavigationLink {
                     NewPostView()
                 } label: {
@@ -25,6 +27,8 @@ struct HomeFeedView: View {
                     }
                 }
             }
+        }.onAppear {
+            vm.fetchPosts()
         }
     }
 }

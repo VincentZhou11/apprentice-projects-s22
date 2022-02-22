@@ -13,6 +13,9 @@ struct ContentView: View {
             HomeFeedView().tabItem {
                 Label("Menu", systemImage: "house.fill")
             }
+            NewPostView().tabItem {
+                Label("New Post", systemImage: "plus.circle.fill")
+            }
             ProfileView().tabItem {
                 Label("Profile", systemImage: "person.fill")
             }
