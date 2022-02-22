@@ -9,11 +9,12 @@ import SwiftUI
 
 struct PostView: View {
     let post: Post
-    
+        
+    var parentPost: Post? = nil
     @State var liked = false
 
     var body: some View {
-        VStack(alignment:.leading) {
+        VStack(alignment:.leading, spacing:10) {
             HStack {
                 HStack {
                     Image(post.authorImageAddress).resizable().scaledToFit().clipShape(Circle()).frame(width: 50, height: 50)
@@ -26,8 +27,10 @@ struct PostView: View {
                 Spacer()
                 Text(post.formattedDate).font(.subheadline).foregroundColor(.secondary)
             }
-            
-            Text(post.postContent).padding([.top, .bottom]).fixedSize(horizontal: false, vertical: true)
+            if let replyPost = parentPost {
+                Text("Replying to ").foregroundColor(.secondary) + Text("@\(replyPost.authorUsername)").foregroundColor(.blue)
+            }
+            Text(post.postContent).fixedSize(horizontal: false, vertical: true)
             HStack {
                 Button() {
                     liked.toggle()
@@ -39,7 +42,7 @@ struct PostView: View {
                 }.buttonStyle(PlainButtonStyle())
                 
                 NavigationLink() {
-                    ReplyChainView(post:post)
+                    ReplyChainView(parentPost:post)
                 } label: {
                     HStack {
                         Image(systemName: "bubble.left").foregroundColor(.secondary)
@@ -55,7 +58,7 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: .example)
+        PostView(post: .example, parentPost: Post.example)
             .bothColorSchemes()
     }
 }

@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct ReplyChainView: View {
-    let post: Post
+    let parentPost: Post
     
     var body: some View {
         VStack {
-            
-            
             ScrollView {
                 
-                PostView(post: post)
-                
-                ForEach(post.replies, id: \.id) { post in
-                    PostView(post: post).padding(.leading, 20)
+                PostView(post: parentPost)
+                Divider()
+                Text("Replies").foregroundColor(.blue).font(.headline)
+                Divider()
+                ForEach(parentPost.replies, id: \.id) { post in
+                    PostView(post: post, parentPost: parentPost).padding(.leading, 20)
                 }
             }.padding([.leading, .trailing]).overlay(alignment:.bottomTrailing) {
                 NavigationLink {
-                    ReplyView(post:post)
+                    ReplyView(post:parentPost)
                 } label: {
                     Circle().frame(width:50,height:50).padding().overlay {
                         Image(systemName: "plus").foregroundColor(.white)
@@ -36,6 +36,6 @@ struct ReplyChainView: View {
 
 struct ReplyChainView_Previews: PreviewProvider {
     static var previews: some View {
-        ReplyChainView(post:.example)
+        ReplyChainView(parentPost:.example).bothColorSchemes()
     }
 }
