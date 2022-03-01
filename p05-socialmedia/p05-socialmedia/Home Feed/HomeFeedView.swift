@@ -8,12 +8,23 @@
 import SwiftUI
 
 struct HomeFeedView: View {
-    let posts: [Post] = PostList.defaultPosts
-    
+    @StateObject var vm = HomeFeedViewModel()
+
     var body: some View {
         NavigationView {
+//            List {
+//                ForEach(vm.posts) { post in
+//                    PostView(post: post)
+//                }
+//            }
+//            .listStyle(.plain)
+//            .navigationTitle("bluebird")
+//        }
+//        .onAppear(perform: {
+//            vm.fetchPosts()
+//        })
             ScrollView {
-                ForEach(posts, id: \.id) { post in
+                ForEach(vm.posts, id: \.id) { post in
                     PostView(post: post)
                 }
             }.navigationBarHidden(true).overlay(alignment:.bottomTrailing) {

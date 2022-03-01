@@ -8,13 +8,38 @@
 import SwiftUI
 
 struct NewPostView: View {
-    @State var text = ""
-    
+    @StateObject var vm = NewPostViewModel()
+
     var body: some View {
-        VStack(alignment:.leading) {
-            Text("New Post")
-            TextField("Reply", text: $text)
-        }
+        NavigationView {
+            VStack {
+                ZStack(alignment: .topLeading) {
+                    TextEditor(text: $vm.currentText)
+
+                    if vm.currentText.isEmpty {
+                        Text("What's happening?")
+                            .foregroundColor(.secondary)
+                            .padding(8)
+                    }
+                }
+            }
+            .cornerRadius(10)
+            .padding()
+            .navigationTitle("Create Post")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Post") {
+                        vm.makePost()
+                    }
+                }
+            }
+//    @State var text = ""
+//
+//    var body: some View {
+//        VStack(alignment:.leading) {
+//            Text("New Post")
+//            TextField("Reply", text: $text)
+//        }
     }
 }
 
