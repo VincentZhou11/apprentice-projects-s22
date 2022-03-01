@@ -2,7 +2,7 @@
 //  NewPostView.swift
 //  p05-socialmedia
 //
-//  Created by Samuel Shi on 2/17/22.
+//  Created by Vincent Zhou on 2/8/22.
 //
 
 import SwiftUI
@@ -33,7 +33,13 @@ struct NewPostView: View {
                     }
                 }
             }
-        }
+//    @State var text = ""
+//
+//    var body: some View {
+//        VStack(alignment:.leading) {
+//            Text("New Post")
+//            TextField("Reply", text: $text)
+//        }
     }
 }
 

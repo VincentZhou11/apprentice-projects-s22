@@ -10,30 +10,43 @@ import SwiftUI
 struct PostView: View {
     let post: Post
     
+    @State var liked = false
+
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(alignment:.leading) {
             HStack {
-                Image(post.authorImageAddress)
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-                
-                VStack(alignment: .leading) {
-                    Text(post.authorName)
-                    Text(post.authorUsername)
-                        .foregroundColor(.secondary)
-                        .font(.callout)
+                HStack {
+                    Image(post.authorImageAddress).resizable().scaledToFit().clipShape(Circle()).frame(width: 50, height: 50)
+                    VStack(alignment:.leading) {
+                        Text(post.authorName)
+                        Text("@\(post.authorUsername)").font(.subheadline).foregroundColor(.secondary)
+                    }
+                    
                 }
-                
                 Spacer()
+                Text(post.formattedDate).font(.subheadline).foregroundColor(.secondary)
             }
             
-            Text(post.postContent)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
+            Text(post.postContent).padding([.top, .bottom]).fixedSize(horizontal: false, vertical: true)
             HStack {
-                Label("\(post.likeCount)", systemImage: "heart")
-                Label("\(post.commentCount)", systemImage: "heart")
+                Button() {
+                    liked.toggle()
+                } label: {
+                    HStack {
+                        Image(systemName: "heart").foregroundColor(liked ? .red : .secondary)
+                        Text("\(post.likeCount)").foregroundColor(liked ? .red : .secondary)
+                    }
+                }.buttonStyle(PlainButtonStyle())
+                
+                NavigationLink() {
+                    ReplyView(replyUsername: post.authorUsername)
+                } label: {
+                    HStack {
+                        Image(systemName: "bubble.left").foregroundColor(.secondary)
+                        Text("\(post.commentCount)").foregroundColor(.secondary)
+                    }
+                }.buttonStyle(PlainButtonStyle())
+                
                 Spacer()
             }
         }
